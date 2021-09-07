@@ -9,10 +9,11 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-use dosamigos\selectize\SelectizeDropDownList;
+
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\widgets\Select2;
 
 /**
  * @var $this            yii\web\View
@@ -33,7 +34,7 @@ use yii\widgets\ActiveForm;
 
 <?= $form->field($model, 'description') ?>
 
-<?= $form->field($model, 'rule')->widget(SelectizeDropDownList::class, [
+<?= $form->field($model, 'rule')->widget(Select2::class, [
     'items' => ArrayHelper::map(Yii::$app->getAuthManager()->getRules(), 'name', 'name'),
     'options' => [
         'prompt' => Yii::t('usuario', 'Select rule...'),
@@ -42,7 +43,7 @@ use yii\widgets\ActiveForm;
 
 
 <?= $form->field($model, 'children')->widget(
-    SelectizeDropDownList::class,
+    Select2::class,
     [
         'items' => $unassignedItems,
         'options' => [

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## private fork
+
+ - Remove Selectizewidget
+ - Add bootstrap 5 dep.
+
 ## work in progress
  - Fix #380: Avoid rewriting AccessRule::matchRole (maxxer)
  - Fix #378: Add module attribute 'disableIpLogging' (jkmssoft)
