@@ -35,16 +35,16 @@ $unassignedItems = Yii::$container->get(AuthHelper::class)->getUnassignedItems($
 <?= $form->field($model, 'description') ?>
 
 <?= $form->field($model, 'rule')->widget(Select2::class, [
-    'items' => ArrayHelper::map(Yii::$app->getAuthManager()->getRules(), 'name', 'name'),
+    'data' => ArrayHelper::map(Yii::$app->getAuthManager()->getRules(), 'name', 'name'),
     'options' => [
-        'prompt' => 'Select rule...'
+        'placeholder' => 'Select rule...'
     ]
 ]) ?>
 
 <?= $form->field($model, 'children')->widget(
     Select2::class,
     [
-        'items' => $unassignedItems,
+        'data' => $unassignedItems,
         'options' => [
             'id' => 'children',
             'multiple' => true,

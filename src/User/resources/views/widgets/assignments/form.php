@@ -47,7 +47,7 @@ use yii\widgets\ActiveForm;
 <?= $form->field($model, 'items')->widget(
     Select2::class,
     [
-        'items' => $availableItems,
+        'data' => $availableItems,
         'options' => [
             'id' => 'children',
             'multiple' => true,

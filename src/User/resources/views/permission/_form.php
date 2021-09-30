@@ -35,9 +35,9 @@ use kartik\widgets\Select2;
 <?= $form->field($model, 'description') ?>
 
 <?= $form->field($model, 'rule')->widget(Select2::class, [
-    'items' => ArrayHelper::map(Yii::$app->getAuthManager()->getRules(), 'name', 'name'),
+    'data' => ArrayHelper::map(Yii::$app->getAuthManager()->getRules(), 'name', 'name'),
     'options' => [
-        'prompt' => Yii::t('usuario', 'Select rule...'),
+        'placeholder' => Yii::t('usuario', 'Select rule...'),
     ]
 ]) ?>
 
@@ -45,7 +45,7 @@ use kartik\widgets\Select2;
 <?= $form->field($model, 'children')->widget(
     Select2::class,
     [
-        'items' => $unassignedItems,
+        'data' => $unassignedItems,
         'options' => [
             'id' => 'children',
             'multiple' => true,
